@@ -1,0 +1,43 @@
+#doctor-profile-section {
+    background-color: #f8f9fa;
+}
+
+.doctor-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.doctor-speciality {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.doctor-description {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #495057;
+}
+
+.doctor-info h5 {
+    font-weight: 500;
+    color: #343a40;
+}
+
+.doctor-info p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.doctor-image {
+    text-align: center;
+}
+
+.doctor-image img {
+    border: 5px solid #007bff;
+}
+
+button {
+    margin-top: 30px;
+}

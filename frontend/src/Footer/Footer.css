@@ -1,0 +1,91 @@
+#footer{
+    margin-top: 10px;
+}
+
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.footer-logo img{
+    width: 40%;
+    margin-bottom: 20px;
+}
+.footer-logo p{
+  font-size: 13px;
+  line-height: 25px;
+  color: var(--primary-text-color);
+}
+.company p {
+    font-size: 18px;
+    font-weight: 500;
+}
+.company ul{
+    font-size: 13px;
+    list-style-type: none;
+    opacity: 0.8;
+}
+.touch p{
+    font-size: 18px;
+    font-weight: 500;
+}
+ul li{
+    font-size: 13px;
+    list-style-type: none;
+    opacity: 0.8;
+}
+
+
+/* Styles for screens with min-width of 768px (tablet view) */
+@media (min-width: 768px) {
+    .footer-info {
+        flex-direction: row; /* Changes the direction to row for wider screens */
+        gap: 0px; /* Adjust gap size for better layout on tablets */
+        padding: 10px 50px;
+    }
+
+    .footer-logo img {
+        width: 50%; /* Adjust the image size */
+    }
+
+    .footer-logo p {
+        font-size: 14px; /* Slightly larger text for better readability */
+        line-height: 28px; 
+    }
+
+    .company p, .touch p {
+        font-size: 20px; /* Increase the font size */
+    }
+
+    .company ul, ul li {
+        font-size: 14px; /* Slightly larger font */
+    }
+}
+
+/* Styles for screens with min-width of 1024px (desktop view) */
+@media (min-width: 1024px) {
+    .footer-info {
+        justify-content: center;
+        gap: 10px; /* Larger gap for wider screens */
+        padding: 10px 100px;
+    }
+
+    .footer-logo img {
+        width: 30%; /* Further reduce image size on larger screens */
+    }
+    .footer-logo  {
+        padding: 0px 20px;
+    }
+    .footer-logo p {
+        font-size: 13px; /* Increase font size */
+        line-height: 25px;
+    }
+
+    .company p, .touch p {
+        font-size: 20px; /* Larger font size */
+    }
+
+    .company ul, ul li {
+        font-size: 16px; /* Larger text for better readability */
+    }
+}

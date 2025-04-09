@@ -1,0 +1,58 @@
+ 
+h1,
+h2,
+h3,
+p {
+    font-family: "Outfit", sans-serif;
+    color: blue;
+}
+.text-primary{
+    color: #a4aee0;
+}
+.text-secondary{
+    color: #349bc3;
+}
+
+/* sidebar styling */
+.sidebar {
+    background-color: white;
+    color: var(--primary-text-color);
+    padding: 1rem;
+    text-align: center;
+}   
+
+.sidebar-item{
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+
+
+.icon:hover{
+
+transform: scale(1.1);
+}
+
+/*  Nav Bar*/
+
+.navbar{
+    width: 100%;
+}
+
+
+/* the container that holds Navbar+ content */
+.contentContainer{
+    width: auto;
+}
+
+/* charts Styling */
+
+.cardTitle{
+     font-weight: 900
+}
+
+.cardSubtitle{
+    
+}
+

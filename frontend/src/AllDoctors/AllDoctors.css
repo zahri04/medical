@@ -1,0 +1,42 @@
+#alldoctor-section{
+    padding: 30px 10px;
+}
+.specialities {
+
+}
+.specialities p{
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 5px 9px;
+    border-radius: 5px; 
+}
+.specialities p:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* all all-doctors */
+
+.all-doctors{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+@media only screen and (min-width:768px) {
+    .all-doctors{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-around;
+    }
+}
+@media only screen and (min-width:1024px) {
+    .all-doctors{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: safe;
+    }
+}

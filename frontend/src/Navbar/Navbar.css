@@ -1,0 +1,174 @@
+/* General Styling */
+* {
+    /* border: 1px solid red; */
+}
+
+.navbar {
+    background-color: #ffffff;
+    width: 100%;
+    border-bottom: 1px solid rgba(143, 143, 143, 0.368);
+}
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 35px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Mobile View (default) */
+/* Nav Links (hidden in mobile view) */
+.nav-links {
+    position: absolute;
+    top: 80px;
+    right: 1%;
+    width: 70%;
+    flex-direction: column;
+    gap: 5px;
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    background-color: white;
+}
+/* whenerver toggle button is true that this class applied */
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    text-align: start;
+    width: 100%;
+    padding: 15px 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.242);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* Default link style */
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: var( --primary-text-color);
+    font-size: 18px;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* Create the border with ::before pseudo-element */
+  .nav-links a::before {
+    content: "";
+    position: absolute;
+    width: 0; 
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-border);
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* On hover, expand the border from left to right */
+  .nav-links a:hover::before {
+    width: 100%; 
+  }
+
+/* Create Account Button (hidden on mobile) */
+.create-account {
+    display: none;
+}
+
+/* Toggle Button for Mobile */
+.toggle-btn {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-btn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px;
+}
+
+/* Tablet View (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .navbar-container {
+        padding: 15px 30px;
+    }
+    .navbar{
+        
+    }
+    /* Nav Links visible on tablet */
+    .nav-links {
+        position: relative;
+        top: 0px;
+        right: 0%;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0%;
+    }
+   
+    .nav-links li {
+        border: 0px;
+        text-align: start;
+        width: auto;
+        padding: 0px 0px;
+        box-shadow: 0px 0px 0px;
+    }
+    
+    .nav-links a {
+        font-size: 18px;   
+    }
+    .create-account {
+        display: block;
+        padding: 1px 4px;
+        background-color: var(--primary-color);
+    }
+
+    .toggle-btn {
+        display: none;
+    }
+}
+
+/* Desktop View (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+
+    .nav-links {
+        display: flex;
+        gap: 40px;
+    }
+
+    .nav-links li {
+        
+    }
+
+    .create-account .btn {
+        padding: 8px 15px;
+     
+    }
+
+    .create-account .btn:hover {
+       
+    }
+}

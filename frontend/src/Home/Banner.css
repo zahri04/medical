@@ -1,0 +1,106 @@
+#banner{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#banner-container{
+    background-color: var(--primary-background-color);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.banner-title-div{
+    padding: 15px 10px;
+}
+.banner-title{
+    color: rgb(5, 2, 2);
+   padding: 5px 2px;
+    line-height: 20px;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+.banner-title-div a {
+    /* width: 80%; */
+    background-color: white;
+    /* Button background color */
+    color: var(--primary-text-color);
+    /* Button text color */
+    padding: 5px 9px;
+    /* Button padding */
+    text-decoration: none;
+    /* Remove underline */
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+.banner-img img{
+    margin-top: 10%;
+   
+}
+
+@media (min-width: 768px) {
+    #banner{
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding: 30px 30px;
+    }
+
+    .banner-title{
+        padding: 20px 10px;
+         line-height: 45px;
+         font-weight: 800;
+         margin-bottom: 0px;
+         font-size: 40px;
+         margin-top: 10px;
+     }
+     .banner-img img{
+        margin-top: 5%;
+        /* height: 70%; */
+    }
+    .banner-title-div{
+        padding: 15px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .banner-title-div a {
+        padding: 10px 14px;
+        font-size: 13px;
+      
+        width: 40%;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    #banner{
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding: 50px 100px;
+    }
+
+    .banner-title{
+         line-height: 55px;
+         font-size: 50px;
+
+     }
+     .banner-img {
+
+    }
+     .banner-img img{
+        margin-top: 6%; 
+    }
+    .banner-title-div{
+        padding: 15px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .banner-title-div a {
+        padding: 12px 30px;
+        font-size: 16px;
+        width: 40%;
+        margin-left: 10px;
+    }
+}

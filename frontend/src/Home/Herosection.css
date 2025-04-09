@@ -1,0 +1,165 @@
+
+#home-container {
+    background-color: var(--primary-background-color);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Default Styles for Mobile View */
+#home-container {
+    color: white;
+    text-align: center;
+    /* Center text for mobile */
+    padding: 0px 20px;
+    overflow: hidden;
+}
+
+.hero-title-div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 40px 20px;
+}
+
+.hero-title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 40px;
+}
+
+.group-img img {
+    max-width: 100%;
+    /* Responsive images */
+    height: 50px;
+    /* Maintain aspect ratio */
+}
+
+.group-img p {
+    font-size: 13px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.hero-title-div a {
+    /* width: 80%; */
+    background-color: white;
+    /* Button background color */
+    color: var(--primary-text-color);
+    /* Button text color */
+    padding: 10px 10px;
+    /* Button padding */
+    text-decoration: none;
+    /* Remove underline */
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 13px;
+    transition: transform 0.3s ease-in-out;
+}
+
+a:hover {
+    transform: scale(1.05);
+}
+
+.hero-title-div a span {
+    padding-left: 5px;
+
+    /*-------------------------------------------------------------------------- */
+
+}
+
+
+
+/* Tablet View */
+@media (min-width: 768px) {
+    .hero-title-div {
+        /* justify-items: flex-start; */
+    }
+
+    .hero-title {
+        font-size: 35px;
+        font-weight: 700;
+        text-align: left;
+        line-height: 45px;
+    }
+
+    .group-img {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .group-img img {
+        max-width: 80%;
+        height: 30px;
+    }
+
+    .group-img p {
+        font-size: 12px;
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    .hero-title-div a {
+        padding: 10px 10px;
+        /* Button padding */
+        margin-left: 0px;
+        margin-right: 120px;
+        font-size: 13px;
+    }
+
+    .hero-img img {
+        margin-top: 33%;
+        /* height: 80%; */
+        width: 100%;
+
+    }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+    #Home {
+        margin-bottom: 50px;
+    }
+
+    #home-container {
+        color: white;
+        text-align: center;
+        /* Center text for mobile */
+        padding: 0px 80px;
+        overflow: hidden;
+    }
+
+    .hero-title-div {
+        margin-top: auto;
+        padding: 60px 10px;
+    }
+
+    .hero-title {
+        font-size: 60px;
+        font-weight: 700;
+        text-align: left;
+        line-height: 62px;
+    }
+
+    .group-img {
+        gap: 4px;
+    }
+
+    .group-img img {
+        max-width: 80%;
+        height: 40px;
+    }
+
+    .group-img p {
+        font-size: 13px;
+    }
+
+    .hero-title-div a {
+        padding: 15px 10px;
+        margin-right: 50%;
+        font-size: 14px;
+    }
+}

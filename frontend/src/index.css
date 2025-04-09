@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+  font-family: "Outfit", sans-serif;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+:root {
+  --primary-color: #6a99f1f4;
+  --primary-text-color: #333;
+  --primary-border: #6a99f1f4;
+  --primary-background-color: #6a99f1f4;
+  --primary-title-size:30px;
+  --primary-description-size:13px;
+  --primary-title-weight:600;
+  --primary-description-weight:500;
+  --primary-doctor-background-color:#b4c7f74f;
+  --primary-avilable: #03ed36;
+}
+
+

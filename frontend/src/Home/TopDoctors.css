@@ -1,0 +1,131 @@
+#top-doctors {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.Doctors-title{
+    text-align: center;
+}
+.Doctors-title h1{
+    font-size: var( --primary-title-size);
+    font-weight: var( --primary-title-weight);
+ }
+ .Doctors-title p{
+    font-size: var( --primary-description-size);
+    font-weight: var(  --primary-description-weight);
+    padding-top: 10px;
+  }
+#doctor-card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 13px;
+}
+#doctor-card{
+    border: 1px solid rgba(145, 145, 145, 0.229) ;
+    border-radius: 12px;
+    padding: 0%;
+    /* width: 90%; */
+}
+/*  hover */
+#doctor-card {
+    transition: transform 0.3s ease-in-out; 
+  }
+  #doctor-card:hover {
+    transform: translateY(-13px); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); 
+  }
+  
+/* hover */
+#doctor-card img{
+   background-color: var(--primary-doctor-background-color);
+   border-radius: 12px;
+}
+.doctor-info{
+    padding: 20px;
+}
+.doctor-info p{
+    margin: 0;
+}
+.available{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+.available :nth-child(1){
+   width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: var( --primary-avilable);
+}
+.available :nth-child(2){
+    color: var( --primary-avilable);
+    font-size: 14px;
+    font-weight: 500;
+ }
+.doctor-name{
+    font-weight: 600;
+    font-size: 20px;
+}
+.doctor-speciality{
+    font-size: 13px;
+    opacity: 0.8;
+}
+.more-btn{
+    text-align: center;
+}
+.more-btn a{
+    padding: 0px 0px;
+}
+.more-btn button{
+    border: 1px solid rgba(148, 148, 148, 0.237);
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 13px;
+    background-color: rgba(227, 227, 227, 0.717);
+}
+.more-btn :hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+@media only screen and (min-width:768px) {
+    .Doctors-title p{
+        padding-left: 40%;
+        padding-right: 40%;
+      }
+      #doctor-card-container{
+        display: flex;
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        gap: 20px;
+        justify-content: center;
+        padding: 30px 30px;
+    }
+    .more-btn a{
+        padding: 0px 0px;
+    }
+    .more-btn button{
+        padding: 7px 25px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .Doctors-title p{
+        padding-left: 40%;
+        padding-right: 40%;
+      }
+      #doctor-card-container{
+        flex-wrap: nowrap;
+        gap: 10px;
+        justify-content: start;
+        padding: 60px 100px;
+    }
+    .more-btn a{
+        padding: 0px 0px;
+    }
+    .more-btn button{
+        padding: 8px 29px;
+        font-size: 14px;
+    }
+}
