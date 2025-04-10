@@ -11,14 +11,6 @@ class DoctorView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, action=None, pk=None):
-        """
-        Handles retrieving data:
-        - `accepted-times/<doctor_id>/<date>/` → Returns accepted appointment times for a doctor on a given date.
-        - `free-times/<doctor_id>/<date>/` → Returns available appointment slots.
-        - `patient-info/<patient_id>/` → Returns patient details.
-        - `app-details/<app_id>/` → Returns appointment details.
-        - `diag-details/<patient_id>/` → Returns diagnosis details for a patient.
-        """
         if action == "accepted-times" and pk:
             doctor_id = pk
             date = request.query_params.get("date")
@@ -41,11 +33,6 @@ class DoctorView(APIView):
         return Response({"error": "Invalid request"}, status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, action=None, pk=None):
-        """
-        Handles accepting or rejecting appointments:
-        - `accept-appointment/<appointment_id>/` → Accepts an appointment.
-        - `reject-appointment/<appointment_id>/` → Rejects an appointment.
-        """
         if action == "accept-appointment" and pk:
             return self.accept_appointment(pk)
 

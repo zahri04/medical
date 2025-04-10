@@ -14,10 +14,9 @@ from .views_auth import AuthView
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from dj_rest_auth.registration.views import SocialLoginView
 from collections import defaultdict
+
 class GoogleOAuthLogin(SocialLoginView):
-    adapter_class = GoogleOAuth2Adapter  # Handles Google OAuth  # Serializes the OAuth token
-
-
+    adapter_class = GoogleOAuth2Adapter  # Handles Google OAuth
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -25,10 +24,8 @@ def user_profile_view(request):
     user = request.user
     role = user.role
 
-    # Default base user data
     base_data = CustomUserSerializer(user).data
 
-    # Extend based on role
     if role == 'doctor':
         try:
             doctor = Doctor.objects.get(user=user)
@@ -50,13 +47,11 @@ def user_profile_view(request):
         except Assistant.DoesNotExist:
             return Response({"error": "Assistant profile not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    else:  # admin or unknown roles
+    else:
         serialized = base_data
 
-    # Combine base data and extended data
     profile_data = {**base_data, **serialized}
     return Response(profile_data, status=status.HTTP_200_OK)
-
 
 @api_view(['GET'])
 def doctors_grouped_by_speciality(request):
@@ -68,7 +63,6 @@ def doctors_grouped_by_speciality(request):
         grouped[doc.specialization].append(serializer.data)
 
     return Response(grouped)
-
 
 @login_required
 def doctor_dashboard(request):

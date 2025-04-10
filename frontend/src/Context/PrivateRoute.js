@@ -1,14 +1,14 @@
 
 import React from "react";
 import { Navigate , Outlet } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext.js";
+import { useAuth } from "./AuthContext.js";
 
 const RoleBasedRoute = ({ AllowedRole }) => {
   
   const { authData } = useAuth();
 
   // prevent rendering while still state may not be updated
-  if(!authData.userProfile ){
+  if(!authData ){
     return null;
   }
 

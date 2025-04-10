@@ -2,35 +2,12 @@ import React from "react";
 import { Container, Row, Col, Card,Table, Badge, ListGroup } from "react-bootstrap";
 import { Hospital, Calendar2Check, PersonCheck, ClipboardHeart,Bell,Chat, Person, CheckCircle, XCircle } from "react-bootstrap-icons";
 import Chart from "react-apexcharts";
-
+import { useAuth } from "../../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const Cards = [
-    {
-      icon: <Hospital size={30} />,
-      title: "Total Patients",
-      text: "Manage all registered hospitals and clinics in the system.",
-      count: 100
-    },
-    {
-      icon: <PersonCheck size={30} />,
-      title: "Registered Doctors",
-      text: "Track and manage all active and inactive doctors.",
-      count: 50,
-    },
-    {
-      icon: <Calendar2Check size={30} />,
-      title: "Total Appointments",
-      text: "Monitor upcoming and past appointments scheduled by patients.",
-      count: 200,
-    },
-    {
-      icon: <ClipboardHeart size={30} />,
-      title: "Generated AI Analysis",
-      text: "Manage and assign medical assistants to doctors and departments.",
-      count: 10,
-    },
-  ];
+  const Navigate= useNavigate();
+  
 
   const doctorActivitiesOptions = {
     series: [{
@@ -107,11 +84,147 @@ const Dashboard = () => {
     { id: 3, message: "You have 4 tasks Done.", icon: <CheckCircle size={18} />, time: "30 min ago" },
     { id: 4, message: "You have 3 pending tasks.", icon: <Bell size={18} />, time: "Just Now" },
   ];
+
+  const {authData}=useAuth();
+  if(!authData.userProfile){
+    return null;
+  }
+  const name = authData.userProfile ? authData.userProfile.last_name : "";
+  const role= authData.userProfile ? authData.userProfile.role : "";
+
+
+
+
+let Cards=[];
+   switch(role){
+    case "admin":
+       Cards = [
+        {
+          icon: <Hospital size={30} />,
+          title: "Total Patients",
+          text: "Manage all registered hospitals and clinics in the system.",
+          count: 100
+        },
+        {
+          icon: <PersonCheck size={30} />,
+          title: "Registered Doctors",
+          text: "Track and manage all active and inactive doctors.",
+          count: 50,
+        },
+        {
+          icon: <Calendar2Check size={30} />,
+          title: "Total Appointments",
+          text: "Monitor upcoming and past appointments scheduled by patients.",
+          count: 200,
+        },
+        {
+          icon: <ClipboardHeart size={30} />,
+          title: "Generated AI Analysis",
+          text: "Manage and assign medical assistants to doctors and departments.",
+          count: 10,
+        },
+      ];
+    break;
+    
+    case "doctor":
+       Cards = [
+        {
+          icon: <Hospital size={30} />,
+          title: "My Total Patients ",
+          text: "Manage all your patients in the system.",
+          count: 100
+        },
+        
+        {
+          icon: <Calendar2Check size={30} />,
+          title: "Total Appointments",
+          text: "Monitor upcoming and past appointments scheduled by patients.",
+          count: 200,
+        },
+        {
+          icon: <ClipboardHeart size={30} />,
+          title: " You Generated AI Analysis",
+          text: "Manage your Ai Diagnosis efficiently.",
+          count: 10,
+        },
+      ];
+      break;
+  
+    case "assistant" :
+       Cards = [
+        {
+          icon: <Hospital size={30} />,
+          title: "Total Patients",
+          text: "Manage all registered hospitals and clinics in the system.",
+          count: 100
+        },
+        {
+          icon: <PersonCheck size={30} />,
+          title: "Registered Doctors",
+          text: "Track and manage all active and inactive doctors.",
+          count: 50,
+        },
+        {
+          icon: <Calendar2Check size={30} />,
+          title: "Total Appointments",
+          text: "Monitor upcoming and past appointments scheduled by patients.",
+          count: 200,
+        },
+        {
+          icon: <ClipboardHeart size={30} />,
+          title: "Generated AI Analysis",
+          text: "Manage and assign medical assistants to doctors and departments.",
+          count: 10,
+        },
+      ];
+      break;
+  
+    case "patient":
+       Cards = [
+     
+        {
+          icon: <Calendar2Check size={30} />,
+          title: "Total Appointments",
+          text: "Monitor upcoming and past appointments scheduled by patients.",
+          count: 200,
+        },
+        {
+          icon: <ClipboardHeart size={30} />,
+          title: "Generated AI Analysis",
+          text: "Manage and assign medical assistants to doctors and departments.",
+          count: 10,
+        },
+      ];
+      break;
+    default:
+       Cards = [
+     
+        {
+          icon: <Calendar2Check size={30} />,
+          title: "Total Appointments",
+          text: "Monitor upcoming and past appointments scheduled by patients.",
+          count: 200,
+        },
+        {
+          icon: <ClipboardHeart size={30} />,
+          title: "Generated AI Analysis",
+          text: "Manage and assign medical assistants to doctors and departments.",
+          count: 10,
+        },
+      ];
+     
+      console.log("your account type is undefined , for that you can't view dashboard Cards: " + role);
+       // Redirect to login if role is not recognized
+      break;
+  }
+
+
+  
   return (
    
     <Container fluid className="p-3 d-flex justify-content-center align-items-center flex-column">
-      <h1>Welcome Admin!</h1>
-      <p className="ms-2">This Dashboard is managed by zahri04</p>
+      <h1>Welcome {name}</h1>
+      <p className="ms-2">This Dashboard is managed by Zahri,Ziane,Louazna</p>
       <Row xs={1} md={2} className="g-4">
         {Cards.map((card, idx) => (
           <Col key={idx}>

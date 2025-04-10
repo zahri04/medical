@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
 import { BrowserRouter, Routes,Navigate, Route } from 'react-router-dom';
 
 
-import {PrivateRoutes,RoleBasedRoute} from './components/PrivateRoute.js';
+import {PrivateRoutes,RoleBasedRoute} from './Context/PrivateRoute.js';
 import Unauthorized from './components/Unauthorized.js';
 // Import Components
 import Home from './Home/Home.js';
@@ -62,6 +62,8 @@ function App() {
           
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+
+
             
             
             
@@ -93,9 +95,10 @@ function App() {
 
               {/* Doctor * Assistant Common Routes */}
             <Route element={<RoleBasedRoute AllowedRole= {['doctor','assistant']} />} >
-              <Route path="todayspreference" element={<TodaysPreference />} />
+            
               <Route path="patients/list" element={<Patients />} />
               <Route path="patients/edit/:id" element={<PatientsForm />} />
+              <Route path="preference" element={<TodaysPreference />} />
             </Route>
               
 

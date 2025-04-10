@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Container, Table, Button, Modal } from "react-bootstrap";
 import { PencilSquare, Trash } from "react-bootstrap-icons";
 import PatientsForm from "./PatientForm";
-import { getpatients,updatepatient,deletepatient } from "./api_patients";
+import { getpatients, updatepatient, deletepatient } from "./api_patients";
 import axios from "axios";
 
-const Patients = () => {
+const Patient = () => {
   const [patients, setPatients] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [editPatient, setEditPatient] = useState(null);
@@ -14,7 +14,6 @@ const Patients = () => {
     getAllPatients();
   }, []);
 
-  // Fetch patients from the backend and filter by role "patient"
   const getAllPatients = async () => {
     try {
       const response = await getpatients();
@@ -22,11 +21,10 @@ const Patients = () => {
       setPatients(data);
     } catch (error) {
       console.error("Error fetching patients:", error);
-      setPatients({});
+      setPatients([]);
     }
   };
 
-  // yarbi tkhdem had l fonction ra khdmat m3a l users walakin haad l3jb f chi chkl
   const handleCreatePatient = async (patientData) => {
     try {
       const formattedPatientData = {
@@ -45,25 +43,26 @@ const Patients = () => {
       console.error("Error creating patient:", error.response?.data || error.message);
     }
   };
-    // Handle updating an existing patient (PUT)
-    const handleUpdatePatient = async (patientData) => {
-      try {
-        await updatepatient(editPatient.patient_id, patientData);
-        setShowForm(false);
-        setEditPatient(null);
-        getAllPatients();
-      } catch (error) {
-        console.error("Error updating patient:", error.response?.data || error.message);
-      }
-    };
-    const handleSavePatient = (patientData) => {
-      if (editPatient) {
-        handleUpdatePatient(patientData);
-      } else {
-        handleCreatePatient(patientData);
-      }
-    };  
-  // Handle deleting a patient
+
+  const handleUpdatePatient = async (patientData) => {
+    try {
+      await updatepatient(editPatient.patient_id, patientData);
+      setShowForm(false);
+      setEditPatient(null);
+      getAllPatients();
+    } catch (error) {
+      console.error("Error updating patient:", error.response?.data || error.message);
+    }
+  };
+
+  const handleSavePatient = (patientData) => {
+    if (editPatient) {
+      handleUpdatePatient(patientData);
+    } else {
+      handleCreatePatient(patientData);
+    }
+  };
+
   const handleDeletePatient = async (patient_id) => {
     try {
       await deletepatient(patient_id);
@@ -73,7 +72,7 @@ const Patients = () => {
       console.error("Error deleting patient:", error);
     }
   };
-  
+
   return (
     <Container>
       <h2 className="my-3">Patients</h2>
@@ -141,4 +140,4 @@ const Patients = () => {
   );
 };
 
-export default Patients;
+export default Patient;

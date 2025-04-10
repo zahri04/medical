@@ -1,10 +1,9 @@
-
 import React, { useState } from "react";
 import { Container, Form, Button, ListGroup } from "react-bootstrap";
 import Data from "../Data";
 
 const TodaysPreference = () => {
-  const [availableSlots, setAvailableSlots] = useState(Data.doctors[0].availableSlots);
+  const [availableSlots, setAvailableSlots] = useState(Data.doctors[0]);
   const [newSlot, setNewSlot] = useState("");
 
   const addSlot = () => {
@@ -13,8 +12,10 @@ const TodaysPreference = () => {
       setNewSlot("");
     }
   };
+  console.log(availableSlots);
 
   return (
+
     <Container className="my-3">
       <h2>Today's Preference</h2>
       <Form>

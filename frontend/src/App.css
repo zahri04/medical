@@ -21,17 +21,14 @@ p {
     text-align: center;
 }   
 
-.sidebar-item{
-    border-radius: 3px;
-    cursor: pointer;
-}
+
 
 
 
 
 .icon:hover{
 
-transform: scale(1.1);
+
 }
 
 /*  Nav Bar*/
